@@ -51,60 +51,65 @@
 
 ### Deploy to Heroku
 
-1. By pushing your code to the Git URL that Heroku provides:
-    1. Go to settings on your Heroku dashboard and copy your Heroku Git URL.
-    2. ![Heroku settings](README-images/heroku-settings)
-    3. ![Heroku Git URL](README-images/heroku-git-url)
-    4. Create another git remote (that will be different from “origin”*):
-        * Type in the terminal ``git remote add *name-of-your-remote*`` + paste the Git URL and press enter.
-        * ![Git remote command](README-images/git-remote-command.png)
-    5. Push to Heroku:
-        * Type in the terminal ``git push -u *name-of-your-remote* master``
-        * ![Push to Heroku](README-images/push-to-heroku.png)
-    6. You will get an error message because the requirements file is missing. We will add it in the next step.
-    7. We need to create a requirements.txt file that will list all the Python dependencies the project needs to install in order to run successfully:
-        * This will provide Heroku a mean to know what language we are using.
-        * Type in the terminal ``pip3 freeze --local > requirements.txt``. This will redirect the output of the freeze command (that list the dependencies) into a file called **requirements.txt**.
-        * **Add**, **Commit** and **Push** to Heroku remote master as in step **5.**:
-        * ![Requirements file](README-images/create-requirements-file.png)
-    8. Create a Procfile:
-        * Type in the terminal ``echo web: python run.py > Procfile``.
-        * It is important to note that *run.py* is the name of our python file and *Procfile* is with a capital **P**.
-    9. **Add**, **Commit** and **Push** as shown below:
-        * ![Add Procfile](README-images/add-procfile.png)
-    10. By reloading a refreshing your app on Heroku or by clicking on ``Òpen app``, your app should display now.
-    11. Because in this project we use a secret-key variable, we need, for the application to fully function, to add any hidden environment variables, or Config Vars, within our App Settings.
-        * Go to the app settings.
-        * Click on ``Reveal Config Vars``.
-        * ![Reveal Config Vars](README-images/reveal-config-vars.png)
-        * Add the variables as shown:
-        * ![Config Vars](README-images/config-vars.png)
-        * The first two correspond on how we set the app and can be found on top of the run.py file.
-        * The last ones come from the env.py file.
+#### With Heroku toolbelt, by pushing your code to the Git URL that Heroku provides:
 
-2. By linking a GitHub repository to Heroku and deploy it automatically from GitHub.
-    1. From the Deploy section of your app, click on the GitHub Deployment method:
-    2. ![Deploy with GitHub](README-images/deploy-githib.png)
-    3. Click on connect to GitHub and Authorize Heroku to connect.
-        * ![Connect GitHub](README-images/connect-github.png)
-        * ![Authorize Heroku](README-images/auth-heroku.png)
-    4. Fill up the input for the name of your repository and click search.
-    5. Click connect.
-        * ![Connect the app](README-images/connect-app.png)
-    6. Click on ``Deploy Automatically`` and ``Deploy Branch``.
-        * ![Deployment](README-images/final-deploy.png)
-    7. You need to make sure your project is not connected to Heroku but only to GitHub:
-        * in the terminal, type `git remote -v` and if it returns more the *heroku* remote, than remove it with the command ``git remote rm *name-of-your-remote*``
-    8. **Add** and **Push** your project to GitHub:
-        *
-    9. When Deployment successful, you can view the website clicking on ``view`` or ``Òpen app``
-        * ![Open app GitHub](README-images/view-app-github.png)
+1. Go to settings on your Heroku dashboard and copy your Heroku Git URL.
+2. ![Heroku settings](README-images/heroku-settings)
+3. ![Heroku Git URL](README-images/heroku-git-url)
+4. Create another git remote (that will be different from “origin”*):
+    * Type in the terminal ``git remote add *name-of-your-remote*`` + paste the Git URL and press enter.
+    * ![Git remote command](README-images/git-remote-command.png)
+5. Push to Heroku:
+    * Type in the terminal ``git push -u *name-of-your-remote* master``
+    * ![Push to Heroku](README-images/push-to-heroku.png)
+6. You will get an error message because the requirements file is missing. We will add it in the next step.
+7. We need to create a requirements.txt file that will list all the Python dependencies the project needs to install in order to run successfully:
+    * This will provide Heroku a mean to know what language we are using.
+    * Type in the terminal ``pip3 freeze --local > requirements.txt``. This will redirect the output of the freeze command (that list the dependencies) into a file called **requirements.txt**.
+    * **Add**, **Commit** and **Push** to Heroku remote master as in step **5.**:
+    * ![Requirements file](README-images/create-requirements-file.png)
+8. Create a Procfile:
+    * Type in the terminal ``echo web: python run.py > Procfile``.
+    * It is important to note that *run.py* is the name of our python file and *Procfile* is with a capital **P**.
+9. **Add**, **Commit** and **Push** as shown below:
+    * ![Add Procfile](README-images/add-procfile.png)
+10. By reloading a refreshing your app on Heroku or by clicking on ``Òpen app``, your app should display now.
+11. Because in this project we use a secret-key variable, we need, for the application to fully function, to add any hidden environment variables, or Config Vars, within our App Settings.
+    * Go to the app settings.
+    * Click on ``Reveal Config Vars``.
+    * ![Reveal Config Vars](README-images/reveal-config-vars.png)
+    * Add the variables as shown:
+    * ![Config Vars](README-images/config-vars.png)
+    * The first two correspond on how we set the app and can be found on top of the run.py file.
+    * The last ones come from the env.py file.
 
+#### With Automatic Deployment from GitHub, by linking a GitHub repository to Heroku and deploy it automatically.
 
+1. From the Deploy section of your app, click on the GitHub Deployment method:
+2. ![Deploy with GitHub](README-images/deploy-githib.png)
+3. Click on connect to GitHub and Authorize Heroku to connect.
+    * ![Connect GitHub](README-images/connect-github.png)
+    * ![Authorize Heroku](README-images/auth-heroku.png)
+4. Fill up the input for the name of your repository and click search.
+5. Click connect.
+    * ![Connect the app](README-images/connect-app.png)
+6. You need to make sure your project is not connected to Heroku but only to GitHub:
+    * in the terminal, type `git remote -v` and if it returns more the *heroku* remote, than remove it with the command ``git remote rm *name-of-your-remote*``
+7. **Add** and **Push** your project to GitHub typing in the terminal:
+    * ``git add .``
+    * ``git commit -m "Push to GitHub."``
+    * ``git push origin master``
+    * Note that here the “main” branch is called “master”. You can check your main branch name in the settings of your repository on GitHub.
+8. Click on ``Deploy Automatically`` and ``Deploy Branch``.
+    * ![Deployment](README-images/final-deploy.png)
+9. When Deployment successful, you can view the website clicking on ``view`` or ``Òpen app``
+    * ![Open app GitHub](README-images/view-app-github.png)
 
+#### Key steps to Deploy on Heroku
 
+This will give a quick and short reminder on the important steps to deploy the on Hroku.
 
 1. Create a Heroku app
-2. Connect Git remote to Heroku
+2. Connect Git remote to Heroku or Set automatic Deployment from GitHub.
 3. Create a requirements.txt file
 4. Create a Heroku Procfile: Tells heroku how to run the project
