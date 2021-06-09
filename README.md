@@ -107,9 +107,11 @@
 
 #### Key steps to Deploy on Heroku
 
-This will give a quick and short reminder on the important steps to deploy the on Hroku.
+This will give a quick and short reminder on the important steps to deploy the on Heroku.
 
 1. Create a Heroku app
 2. Connect Git remote to Heroku or Set automatic Deployment from GitHub.
 3. Create a requirements.txt file
-4. Create a Heroku Procfile: Tells heroku how to run the project
+4. Create a Heroku Procfile: Tells Heroku how to run the project.
+
+You can find the Heroku CLI command on [Code-Institute-Solutions/ FlaskFramework](https://github.com/Code-Institute-Solutions/FlaskFramework/blob/master/05-DeployingOurProjectToHeroku/04-pushing_to_heroku/Heroku_CLI_commands.md)
