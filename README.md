@@ -86,7 +86,7 @@
 #### With Automatic Deployment from GitHub, by linking a GitHub repository to Heroku and deploy it automatically.
 
 1. From the Deploy section of your app, click on the GitHub Deployment method:
-2. ![Deploy with GitHub](README-images/deploy-githib.png)
+2. ![Deploy with GitHub](README-images/deploy-github.png)
 3. Click on connect to GitHub and Authorize Heroku to connect.
     * ![Connect GitHub](README-images/connect-github.png)
     * ![Authorize Heroku](README-images/auth-heroku.png)
