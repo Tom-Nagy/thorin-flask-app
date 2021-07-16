@@ -54,8 +54,8 @@
 #### With Heroku toolbelt, by pushing your code to the Git URL that Heroku provides:
 
 1. Go to settings on your Heroku dashboard and copy your Heroku Git URL.
-2. ![Heroku settings](README-images/heroku-settings)
-3. ![Heroku Git URL](README-images/heroku-git-url)
+2. ![Heroku settings](README-images/heroku-settings.png)
+3. ![Heroku Git URL](README-images/heroku-git-url.png)
 4. Create another git remote (that will be different from “origin”*):
     * Type in the terminal ``git remote add *name-of-your-remote*`` + paste the Git URL and press enter.
     * ![Git remote command](README-images/git-remote-command.png)
